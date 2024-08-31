@@ -6,7 +6,20 @@ module.exports = merge(common, {
   devtool: "inline-source-map",
   devServer: {
     static: {
-      directory: "./dist",
+      directory: "example/",
+    },
+    compress: false,
+    allowedHosts: "all",
+    devMiddleware: {
+      mimeTypeDefault: "text/xml",
+      mimeTypes: {
+        ".tmx": "text/xml",
+        ".tsx": "text/xml",
+        ".tx": "text/xml",
+        ".tmj": "application/json",
+        ".tsj": "application/json",
+        ".tj": "application/json",
+      },
     },
   },
 });

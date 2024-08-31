@@ -1,7 +1,6 @@
 import { Engine, Loader, DisplayMode } from "excalibur";
 import { LevelOne } from "./scenes/level-one/level-one";
 import { Player } from "./actors/player/player";
-import { loader } from "./resources";
 import { TiledResource } from "@excaliburjs/plugin-tiled";
 
 /**
@@ -15,7 +14,7 @@ class Game extends Engine {
     super({ displayMode: DisplayMode.FitScreen });
   }
 
-  public start() {
+  public start(loader: Loader) {
     // Create new scene with a player
     this.levelOne = new LevelOne();
     this.player = new Player();
@@ -31,6 +30,12 @@ class Game extends Engine {
 
 const game = new Game();
 
-game.start().then(() => {
-  game.goToScene("levelOne");
+const tiledMap = new TiledResource("test_map.tmx", {
+  useMapBackgroundColor: true,
+});
+
+const loader = new Loader([tiledMap]);
+
+game.start(loader).then(() => {
+  tiledMap.addToScene(game.currentScene);
 });

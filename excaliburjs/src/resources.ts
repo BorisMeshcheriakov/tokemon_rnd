@@ -8,7 +8,6 @@ import { TiledResource } from "@excaliburjs/plugin-tiled";
  */
 export const Resources = {
   Sword: new ImageSource(sword),
-  TileMap: new TiledResource("./scenes/level-test/test_map.tmx"),
 };
 
 export const loader = new Loader();
