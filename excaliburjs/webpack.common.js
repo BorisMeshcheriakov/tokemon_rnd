@@ -24,14 +24,14 @@ module.exports = {
         enforce: "pre",
       },
       {
-        test: /\.tsx?$/,
+        test: /\.ts?$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".ts", ".js"],
     alias: {
       "@": path.resolve("src"),
     },

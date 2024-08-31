@@ -1,12 +1,18 @@
-import { ImageSource } from "excalibur";
+import { ImageSource, Loader, TileMap } from "excalibur";
 import sword from "./images/sword.png";
+import { TiledResource } from "@excaliburjs/plugin-tiled";
 
 /**
  * Default global resource dictionary. This gets loaded immediately
  * and holds available assets for the game.
  */
-const Resources = {
+export const Resources = {
   Sword: new ImageSource(sword),
+  TileMap: new TiledResource("./scenes/level-test/test_map.tmx"),
 };
 
-export { Resources };
+export const loader = new Loader();
+
+for (let resource of Object.values(Resources)) {
+  loader.addResource(resource);
+}

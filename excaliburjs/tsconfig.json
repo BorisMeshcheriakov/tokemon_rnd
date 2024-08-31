@@ -1,4 +1,8 @@
 {
+    "exclude": [
+        "./**/*.tsx",
+        "./dist/**/*.*"
+    ],
     "compilerOptions": {
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,

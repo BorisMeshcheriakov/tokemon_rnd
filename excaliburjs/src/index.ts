@@ -1,7 +1,8 @@
 import { Engine, Loader, DisplayMode } from "excalibur";
 import { LevelOne } from "./scenes/level-one/level-one";
 import { Player } from "./actors/player/player";
-import { Resources } from "./resources";
+import { loader } from "./resources";
+import { TiledResource } from "@excaliburjs/plugin-tiled";
 
 /**
  * Managed game class
@@ -23,13 +24,13 @@ class Game extends Engine {
     game.add("levelOne", this.levelOne);
 
     // Automatically load all default resources
-    const loader = new Loader(Object.values(Resources));
 
     return super.start(loader);
   }
 }
 
 const game = new Game();
+
 game.start().then(() => {
   game.goToScene("levelOne");
 });
