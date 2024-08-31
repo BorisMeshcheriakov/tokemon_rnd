@@ -1,0 +1,51 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "first-level.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "first-level.tmx": {
+            "scale": 2.71640625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 103.26143226919758,
+                "y": 87.79982743744607
+            }
+        },
+        "first-level.tmx#tilemap_packed": {
+            "scaleInDock": 1
+        },
+        "tilemap_packed.tsj": {
+            "scaleInDock": 1
+        },
+        "tilemap_packed.tsx": {
+            "scaleInDock": 1
+        }
+    },
+    "last.externalTilesetPath": "D:/Work/git/tokemon_rnd/excalibur-vite/res/levels/first-level",
+    "last.imagePath": "D:/Work/git/tokemon_rnd/excalibur-vite/res/levels/first-level",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 20,
+    "openFiles": [
+        "first-level.tmx"
+    ],
+    "project": "first-level.tiled-project",
+    "recentFiles": [
+        "first-level.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
