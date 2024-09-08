@@ -16,13 +16,19 @@ const tiledPlugin = () => {
 };
 
 export default defineConfig({
-  plugins: [tiledPlugin(), dts()], // hint vite that tiled tilesets should be treated as external
+  plugins: [tiledPlugin(), dts({ include: ["src"] })],
   build: {
-    assetsInlineLimit: 0, // excalibur cannot handle inlined xml in prod mode
     sourcemap: true,
-    entry: resolve(__dirname, "src/main.ts"),
-    name: "MyLib",
-    formats: ["es"],
-    fileName: "my-lib",
+    assetsInlineLimit: 0,
+    copyPublicDir: false,
+    lib: {
+      entry: resolve(__dirname, "src/main.ts"),
+      formats: ["es"],
+      fileName: "index",
+    },
+    // entry: resolve(__dirname, "src/main.ts"),
+    // name: "MyLib",
+    // formats: ["es"],
+    // fileName: "my-lib",
   },
 });
