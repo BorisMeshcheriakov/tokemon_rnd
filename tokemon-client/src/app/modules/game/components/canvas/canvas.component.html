@@ -1,1 +1,30 @@
 <canvas id="game"></canvas>
+
+<button
+  (pointerdown)="controls.onLeftDown()"
+  (pointerup)="controls.onLeftUp()"
+  (pointerleave)="controls.onLeftUp()"
+>
+  Left
+</button>
+
+<button
+  (pointerdown)="controls.onRightDown()"
+  (pointerup)="controls.onRightUp()"
+>
+  Right
+</button>
+
+<button
+  (pointerdown)="controls.onForwardDown()"
+  (pointerup)="controls.onForwardUp()"
+>
+  Forward
+</button>
+
+<button
+  (pointerdown)="controls.onBackwardDown()"
+  (pointerup)="controls.onBackwardUp()"
+>
+  Backward
+</button>

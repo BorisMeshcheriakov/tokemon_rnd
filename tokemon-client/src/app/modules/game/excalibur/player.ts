@@ -1,15 +1,26 @@
 import * as ex from 'excalibur';
 import { Resources } from './resources';
 import { Config } from './config';
+import { ActorEvents } from 'excalibur/build/dist/Actor';
+import { ControlService } from './control-service';
 
 export class Player extends ex.Actor {
-  constructor(pos: ex.Vector) {
+  btn!: HTMLElement;
+  vent = new ex.EventEmitter();
+
+  constructor(pos: ex.Vector, private controls: ControlService) {
     super({
       pos,
       width: 16,
       height: 16,
       collisionType: ex.CollisionType.Active,
     });
+
+    const btn = document.getElementById('btn');
+
+    if (btn) {
+      this.btn = btn;
+    }
   }
 
   override onInitialize(engine: ex.Engine): void {
@@ -204,19 +215,28 @@ export class Player extends ex.Actor {
     this.vel = ex.Vector.Zero;
 
     this.graphics.use('down-idle');
-    if (engine.input.keyboard.isHeld(ex.Keys.ArrowRight)) {
+    if (
+      engine.input.keyboard.isHeld(ex.Keys.ArrowRight) ||
+      this.controls.right
+    ) {
       this.vel = ex.vec(Config.PlayerSpeed, 0);
       this.graphics.use('right-walk');
     }
-    if (engine.input.keyboard.isHeld(ex.Keys.ArrowLeft)) {
+    if (engine.input.keyboard.isHeld(ex.Keys.ArrowLeft) || this.controls.left) {
       this.vel = ex.vec(-Config.PlayerSpeed, 0);
       this.graphics.use('left-walk');
     }
-    if (engine.input.keyboard.isHeld(ex.Keys.ArrowUp)) {
+    if (
+      engine.input.keyboard.isHeld(ex.Keys.ArrowUp) ||
+      this.controls.forward
+    ) {
       this.vel = ex.vec(0, -Config.PlayerSpeed);
       this.graphics.use('up-walk');
     }
-    if (engine.input.keyboard.isHeld(ex.Keys.ArrowDown)) {
+    if (
+      engine.input.keyboard.isHeld(ex.Keys.ArrowDown) ||
+      this.controls.backward
+    ) {
       this.vel = ex.vec(0, Config.PlayerSpeed);
       this.graphics.use('down-walk');
     }

@@ -19,3 +19,5 @@ export class Tokemon extends ex.Engine {
     });
   }
 }
+
+export * as Ex from "excalibur";

@@ -1,7 +1,7 @@
 {
   "name": "test-ex",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.6",
   "type": "module",
   "typings": "main.d.ts",
   "main": "index.js",

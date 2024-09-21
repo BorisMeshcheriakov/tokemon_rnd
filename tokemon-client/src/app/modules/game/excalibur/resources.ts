@@ -10,14 +10,14 @@ export const Resources = {
     ImageFiltering.Pixel
   ),
   TiledMap: new TiledResource('/assets/levels/first-level/first-level.tmx', {
+    useTilemapCameraStrategy: true,
     entityClassNameFactories: {
-      player: (props) => {
-        const player = new Player(props.worldPos);
-        player.z = 200;
-        return player;
-      },
+      // player: (props) => {
+      //   const player = new Player(props.worldPos);
+      //   player.z = 0;
+      //   return player;
+      // },
     },
-    // pathMap: [{ path: 'first-level.tmx', output: tmxFirstLevel }],
   }),
 };
 

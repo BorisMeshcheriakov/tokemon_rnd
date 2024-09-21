@@ -26,9 +26,5 @@ export default defineConfig({
       formats: ["es"],
       fileName: "index",
     },
-    // entry: resolve(__dirname, "src/main.ts"),
-    // name: "MyLib",
-    // formats: ["es"],
-    // fileName: "my-lib",
   },
 });
