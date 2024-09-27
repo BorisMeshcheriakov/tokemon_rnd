@@ -4,6 +4,9 @@ import { PhaserGame } from '../game/phaser-game.component';
 import { MainMenu } from '../game/scenes.demo/MainMenu';
 import { CommonModule } from '@angular/common';
 import { EventBus } from '../game/EventBus';
+import { WorldScene } from '../game/scenes/world-scene';
+import { DIRECTION } from '../common/direction';
+import { TILE_SIZE } from '../game/config';
 
 @Component({
     selector: 'app-root',
@@ -64,5 +67,12 @@ export class AppComponent implements AfterViewInit {
                 repeat: -1,
             });
         }
+    }
+
+    movePlayer() {
+        const scene = this.phaserRef.game.scene.getScene(
+            'WORLD_SCENE'
+        ) as WorldScene;
+        scene.player.moveCharacter(DIRECTION.RIGHT);
     }
 }
