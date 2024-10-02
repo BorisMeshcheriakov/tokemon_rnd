@@ -1,0 +1,43 @@
+.joystick {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 20px;
+}
+
+.btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.left,
+.right {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.top,
+.bottom {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}

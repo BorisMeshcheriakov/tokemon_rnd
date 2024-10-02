@@ -26,6 +26,7 @@ export class WorldScene extends Phaser.Scene {
         this.player = new Player({
             scene: this,
             position: PLAYER_POSITION,
+            direction: DIRECTION.DOWN,
         });
 
         this.#controls = new Controls(this);
@@ -33,8 +34,9 @@ export class WorldScene extends Phaser.Scene {
 
     override update(time: number, delta: number): void {
         const selectedDirection = this.#controls.getDirectionKeyJustPressed();
-        this.player.moveCharacter(selectedDirection);
+
         if (selectedDirection !== DIRECTION.NONE) {
+            this.player.moveCharacter(selectedDirection);
         }
     }
 }

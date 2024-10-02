@@ -4,14 +4,12 @@ import { PhaserGame } from '../game/phaser-game.component';
 import { MainMenu } from '../game/scenes.demo/MainMenu';
 import { CommonModule } from '@angular/common';
 import { EventBus } from '../game/EventBus';
-import { WorldScene } from '../game/scenes/world-scene';
-import { DIRECTION } from '../common/direction';
-import { TILE_SIZE } from '../game/config';
+import { JoystickModule } from './modules/joystick/joystick.module';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CommonModule, RouterOutlet, PhaserGame],
+    imports: [CommonModule, RouterOutlet, PhaserGame, JoystickModule],
     templateUrl: './app.component.html',
 })
 export class AppComponent implements AfterViewInit {
@@ -67,12 +65,5 @@ export class AppComponent implements AfterViewInit {
                 repeat: -1,
             });
         }
-    }
-
-    movePlayer() {
-        const scene = this.phaserRef.game.scene.getScene(
-            'WORLD_SCENE'
-        ) as WorldScene;
-        scene.player.moveCharacter(DIRECTION.RIGHT);
     }
 }

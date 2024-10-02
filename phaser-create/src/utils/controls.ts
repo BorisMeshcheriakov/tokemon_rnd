@@ -55,7 +55,7 @@ export class Controls {
         if (!this.#cursorKeys) {
             return DIRECTION.NONE;
         }
-        let selectedDirection: string = DIRECTION.NONE;
+        let selectedDirection = DIRECTION.NONE;
         if (Phaser.Input.Keyboard.JustDown(this.#cursorKeys.left)) {
             selectedDirection = DIRECTION.LEFT;
         } else if (Phaser.Input.Keyboard.JustDown(this.#cursorKeys.right)) {
